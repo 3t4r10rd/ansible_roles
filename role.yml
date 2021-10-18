@@ -1,0 +1,17 @@
+---
+- name: web-server configuration
+  hosts: maven
+  become: yes
+  
+  roles:
+   - common
+   - webserver
+   - security
+   
+- name: db configuration
+  hosts: tomcat
+  become: yes
+  
+  roles:
+   - common
+   - security
